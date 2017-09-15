@@ -2,27 +2,72 @@
 
 // Return an array in which the first element is the largest value in the row with depth 0, the second element is the largest value in the row with depth 1, the third element is the largest element in the row with depth 2, etc.
 
+// Definition for binary tree:
+// function Tree(x) {
+//   this.value = x;
+//   this.left = null;
+//   this.right = null;
+// }
+
 function largestValuesInTreeRows(t) {
-  let result = [];
+  let temp = [], levelMaxes = {}, result = [], level = 1;
   if (t) {
-    let queue = [t];
+    let queue = [t, null];
     while (queue.length > 0) {
       let node = queue.shift();
-      result.push(node.value);
-      if (node.left && node.right) {
-        if (node.left.value > node.right.value) {
-          queue.push(node.left);
-        } else {
-          queue.push(node.right);
-        }
-      } else if (node.left) {
+       if(node === null){
+              level++;
+              queue.push(null);
+              if(queue[0] === null) {
+                break;
+              }
+          }
+      node.level = level;
+      temp.push(node);
+      if (node.left) {
         queue.push(node.left);
-      } else if (node.right) {
+      }
+      if (node.right) {
         queue.push(node.right);
       }
     }
   }
+  for (let i = 0; i < temp.length; i++) {
+    let currentLevel = temp[i].level;
+    let currentValue =temp[i].value;
+    if (currentLevel in levelMaxes) {
+      if (levelMaxes[currentLevel] < currentValue) {
+        levelMaxes[currentLevel] = currentValue;
+      }
+    } else {
+      levelMaxes[currentLevel] = currentValue;
+    }
+  }
+  for (let x of Object.keys(levelMaxes)) {
+    result.push(levelMaxes[x]);
+  }
   return result;
 }
 
-largestValuesInTreeRows(t);
+
+// function largestValuesInTreeRows(t) {
+//     let ret = [];
+
+//     const rec = (n, d) => {
+//         if(n === null) return;
+
+//         if(ret[d] === undefined) {
+//             ret[d] = Number.MIN_SAFE_INTEGER;
+//         }
+
+//         ret[d] = Math.max(ret[d], n.value);
+
+//         rec(n.left, d+1);
+//         rec(n.right, d+1);
+//     };
+
+//     rec(t, 0);
+
+//     return ret;
+// }
+
