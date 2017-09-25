@@ -1,5 +1,9 @@
 // a simple example of using JS try-catch-finally blocks to avoid type errors during runtime
 
+/**
+* @param {string} s
+*/
+
 const reverseString = (s) => {
     try {
         s = s.split('').reverse().join('');

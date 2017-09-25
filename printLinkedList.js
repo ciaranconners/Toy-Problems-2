@@ -21,9 +21,5 @@ function print(head) {
     }
 }
 
-// let head = {value: 1, next: {value: 2, next: {value: 3, next: null}}};
-
-// print(head); // => '1 \n 2 \n 3'
-
 
 

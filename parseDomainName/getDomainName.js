@@ -1,3 +1,7 @@
+/**
+* @param {string} url
+*/
+
 function domainName(url) {
   let domainName = '';
   for (let i = 0; i < url.length; i++) {

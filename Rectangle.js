@@ -1,3 +1,11 @@
+// simple example of es6 classes and psuedoclassical inheritance
+
+/**
+* @constructor
+* @param {number} w
+* @param {number} h
+*/
+
 class Rectangle {
   constructor(w, h) {
     this.w = w;
@@ -8,6 +16,12 @@ class Rectangle {
   }
 }
 
+/**
+* @constructor
+* @param {number} w
+* @param {number} h
+*/
+
 class Square extends Rectangle {
   constructor(w) {
     super();
@@ -15,9 +29,3 @@ class Square extends Rectangle {
     this.h = w;
   }
 }
-
-// let rectangle = new Rectangle(3, 4);
-// let square = new Square(3);
-
-// rectangle.area() => 12
-// square.area() => 9
