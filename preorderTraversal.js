@@ -1,3 +1,8 @@
+/**
+* @param {object} t
+* @param {object} currentNode
+*/
+
 function preOrder(t, currentNode = t) {
   let result = [];
   if (currentNode) {
