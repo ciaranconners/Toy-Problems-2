@@ -11,6 +11,9 @@
  */
 const inorderTraversal = (root) => {
     let result = [];
+    if (!root) {
+        return result;
+    }
     if (root.left) {
         result = result.concat(inorderTraversal(root.left));
     }
