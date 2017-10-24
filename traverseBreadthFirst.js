@@ -7,8 +7,8 @@
  * }
  */
 /**
- * @param {Node} node
- * @param {function} callback
+ * @param {Node} node A Node instance
+ * @param {function} callback A callback to call for each Node in the tree
  */
 
 const traverseBreadthFirst = (node, callback) => {
