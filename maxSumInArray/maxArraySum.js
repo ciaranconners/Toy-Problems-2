@@ -8,11 +8,7 @@ const maxArraySum = (nums) => {
   let result = nums.slice();
   for (let i = 1; i < result.length; i++) {
     let current = result[i];
-    if (current > maxSum) {
-      maxSum = current;
-    } else if ((current + maxSum) > maxSum) {
-      maxSum = current + maxSum;
-    } else if ((current + maxSum) < maxSum) {
+    if ((current + maxSum) < maxSum) {
       result.splice(i, 1);
     }
   }
