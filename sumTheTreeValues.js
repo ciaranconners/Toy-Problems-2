@@ -1,4 +1,4 @@
-// a simple method to sum the values contained in a binary tree
+// a method to sum the values contained in a binary tree
 
 function sumTheTreeValues(root){
   let toSum = [];
