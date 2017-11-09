@@ -1,4 +1,3 @@
-
 // a permutation generator that utilizes JavaScript sets
 
 /**
