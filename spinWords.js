@@ -7,8 +7,8 @@ Spaces will be included only when more than one word is present. */
 * @param {string} string
 */
 
-function spinWords(string){
-  let words = string.split(' ');
+const spinWords = (string) => {
+  const words = string.split(' ');
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i].length >= 5 ? words[i].split('').reverse().join('') : words[i];
   }
