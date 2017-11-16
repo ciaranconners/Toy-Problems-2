@@ -15,7 +15,6 @@ const addTwoNumbers = (l1, l2) => {
     const n1 = convertListToDigits(l1).reverse().join('');
     const n2 = convertListToDigits(l2).reverse().join('');
     const sum = parseInt(n1, 10) + parseInt(n2, 10);
-    console.log(n1, n2, sum);
     return convertNumberToList(sum);
 };
 
