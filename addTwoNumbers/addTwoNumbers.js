@@ -10,10 +10,40 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
+
+const addTwoNumbers = (l1, l2) => {
+    const n1 = convertListToDigits(l1).reverse().join('');
+    const n2 = convertListToDigits(l2).reverse().join('');
+    const sum = parseInt(n1, 10) + parseInt(n2, 10);
+    console.log(n1, n2, sum);
+    return convertNumberToList(sum);
+};
+
+function convertListToDigits(list) {
+    let digits = [];
+    digits.push(parseInt(list.val, 10));
+    if (list.next) {
+        digits = digits.concat(convertListToDigits(list.next));
+    }
+    return digits;
 }
+
+function convertNumberToList(number) {
+    const digits = number.toString().split('').reverse().map(el => parseInt(el, 10));
+    const list = new ListNode(digits[0]);
+    if (digits.length > 1) {
+        let currentNode = list;
+        for (let i = 1; i < digits.length; i++) {
+            const newNode = new ListNode(digits[i]);
+            currentNode.next = newNode;
+            currentNode = newNode;
+        }
+    }
+    return list;
+}
+
+
+/* a previous, less modular solution to this problem:
 const addTwoNumbers = (l1, l2) => {
     const getDigits = (l) => {
         let result = [];
@@ -35,4 +65,4 @@ const addTwoNumbers = (l1, l2) => {
         i++;
     }
     return resultList;
-};
+}; */
