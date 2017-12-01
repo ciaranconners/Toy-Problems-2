@@ -54,7 +54,7 @@ class Stack {
     }
 
     clear() {
-        this.root = new Node();
+        this.root = null;
         this.size = 0;
     }
 
@@ -67,3 +67,30 @@ class Stack {
         }
     }
 }
+
+// Example usage:
+
+// const stack = new Stack();
+
+// console.log('isEmpty: ' + stack.isEmpty());
+
+// stack.push(23);
+// stack.push(47);
+// stack.push(95);
+
+// console.log('pop: ' + stack.pop());
+// console.log('pop: ' + stack.pop());
+// console.log('pop: ' + stack.pop());
+// console.log('pop: ' + stack.pop());
+
+// [49,27,63,18,11].forEach(num => stack.push(num));
+
+// console.log('peek: ' + stack.peek());
+// console.log('size: ' + stack.size);
+// console.log('isEmpty: ' + stack.isEmpty());
+
+// console.log('\n' + JSON.stringify(stack, null, 2));
+
+// stack.clear();
+
+// console.log('\ncleared:\n\n' + JSON.stringify(stack, null, 2));
